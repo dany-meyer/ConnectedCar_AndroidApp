@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LV_webService</string>
+    <string name="TextHelloWorld">Hallo Welt</string>
+    <string name="clicked">geklicked</string>
+
+    <string name="personActivity">Person Service</string>
+    <string name="calcActivity">Calculator Service</string>
+    <string name="add">add</string>
+
+</resources>
