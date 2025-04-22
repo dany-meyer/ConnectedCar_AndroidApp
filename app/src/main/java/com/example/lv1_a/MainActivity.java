@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,21 +15,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.lv1_a.model.CalculatorResponse;
-import com.example.lv1_a.model.Person;
-import com.example.lv1_a.model.PersonAdapter;
-import com.example.lv1_a.model.PersonServiceResponse;
-import com.example.lv1_a.service.IPersonService;
-import com.example.lv1_a.service.ICalculatorService;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Activity zur Demonstration Button-Click-Events und Menus
@@ -39,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
     int counter = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
 
 
@@ -79,14 +65,18 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "person menu geklickt");
             Intent intent = new Intent(MainActivity.this, ActivityPerson.class);
             startActivity(intent);
-
             return true;
         } else if (id == R.id.menu_item_calc) {
             Log.i(TAG, "calc menu geklickt");
             Intent intent = new Intent(MainActivity.this, ActivityCalc.class);
             startActivity(intent);
             return true;
-        }
+        } else if (id == R.id.menu_item_mqtt) {
+            Log.i(TAG, "mqtt menu geklickt");
+            Intent intent = new Intent(MainActivity.this, ActivityMQTT.class);
+            startActivity(intent);
+        return true;
+    }
         return super.onOptionsItemSelected(item);
     }
 
@@ -95,4 +85,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
 }

@@ -26,13 +26,31 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
     }
+
+    packaging {
+        resources {
+        excludes += listOf(
+         "META-INF/INDEX.LIST", "META-INF/LICENSE",
+         "META-INF/LICENSE.txt", "META-INF/NOTICE",
+         "META-INF/NOTICE.txt", "META-INF/io.netty.versions.properties"
+        )
+        }
+    }
+
+
 }
+
+
+
+
+
+
 
 dependencies {
 
@@ -49,4 +67,9 @@ dependencies {
     // Retrofit dependencies
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+
+    // HiveMQ MQTT Client dependency
+    implementation(libs.hivemq.mqtt.client)
+
 }

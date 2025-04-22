@@ -24,6 +24,10 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 
+
+hivemq-mqtt-client = { group = "com.hivemq", name = "hivemq-mqtt-client", version = "1.2.2" }
+
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 

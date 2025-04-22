@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LV_webService</string>
+    <string name="app_name">LV_connectedCar</string>
     <string name="TextHelloWorld">Hello World</string>
     <string name="clicked">clicked</string>
 
